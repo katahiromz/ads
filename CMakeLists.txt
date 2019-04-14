@@ -59,7 +59,11 @@ endif()
 
 ##############################################################################
 
+# libads.a
+add_library(ads STATIC ads.cpp)
+
 # ads_test.exe
-add_executable(ads_test ads_test.cpp ads.cpp)
+add_executable(ads_test ads_test.cpp)
+target_link_libraries(ads_test PRIVATE ads)
 
 ##############################################################################
